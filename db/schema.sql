@@ -7,11 +7,13 @@ CREATE TABLE department (
   name VARCHAR(30) NOT NULL
 );
 
-CREATE TABLE service (
+CREATE TABLE roles (
   id SERIAL PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
   salary INTEGER,
-  department_id
+  department_name INTEGER,
+  FOREIGN KEY (department_name)
+  REFERENCES department(name)
 );
 
 CREATE TABLE employee_names (
