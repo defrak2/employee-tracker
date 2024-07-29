@@ -1,6 +1,5 @@
 const express = require('express');
-
-const { Pool } = require('pg');
+const pool = require('./db');  // Import the shared database module
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -8,20 +7,14 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const pool = new Pool (
-  {
-    user: 'postgres',
-    password: 'test123',
-    host: 'localhost',
-    database: 'courses_db'
-  },
-console.log('Connected to the employees_db database!')
-)
-
-pool.connect();
-
-pool.query('INSERT INTO empoloyee_names', function( err, {rows}){
-  console.log(rows);
+app.get('/test', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM employee_names');
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Error executing query', err.stack);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.use((req, res) => {
@@ -29,5 +22,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port ${PORT}`);
 });

@@ -1,8 +1,8 @@
 const { CLI }= require('./lib/prompts');
-const cli = new CLI();
-
-
 const { Database } = require('./lib/queries');
+
+
+const cli = new CLI();
 const database = new Database();
 
 cli.run();

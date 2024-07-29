@@ -10,4 +10,3 @@ INSERT INTO employee_names (first_name, last_name, roles_id, employees_manager)
 VALUES ('Ron', 'John', 1, 'Beatrice'),
        ('Alfred', 'Brown', 2, 'Jim');
 
-       -- make auto increment in schema and dont hard code the ids above
