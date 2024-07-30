@@ -1,26 +1,19 @@
-# employee-tracker
+# Employee Tracker
+
+## Description
+
+To be able to track employees, roles and departments I wanted a command line interface to view and update these fields. 
 
 
-employee-management-app/
-│
-├── db/
-│   ├── connection.js        // File to establish connection to PostgreSQL database
-│   ├── schema.sql           // SQL schema for creating database tables
-│   ├── seeds.sql            // Optional: SQL seeds for initial data
-│
-├── lib/
-│   ├── queries.js           // Functions for database queries (CRUD operations)
-│   ├── prompts.js           // Inquirer prompts for user interactions
-│
-├── models/
-│   ├── Department.js        // Department model definition
-│   ├── Role.js              // Role model definition
-│   ├── Employee.js          // Employee model definition
-│
-├── utils/
-│   ├── formatter.js         // Utility functions for formatting data (e.g., tables)
-│
-├── index.js                 // Main entry point of the application
-├── package.json             // npm package configuration
-├── README.md                // Project documentation
-├── walkthrough.mp4          // Video demonstration of the application
+## Installation
+
+Inquirer, Express and pg are all needed to utilize this application
+
+## Usage
+
+Start the application in the terminal with node index.js and follow the prompts provided in the terminal.
+
+You can utilize this video walk through to see how it works:
+
+https://drive.google.com/file/d/1fQDFWUucwW_g4LJmY3kqCHLZe_LX8z6T/view?usp=sharing
+
